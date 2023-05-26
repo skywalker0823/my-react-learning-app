@@ -6,7 +6,13 @@
 }
 
 
-.card {
-  padding: 2em;
+.top_section {
+  margin-top: 2em;
 }
 
+.card_holder{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}

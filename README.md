@@ -1,5 +1,7 @@
 # React + Vite
 
+Get some COOL effect of cards and buttons.
+
 https://my-react-learning-app.vercel.app/
 
 1. npx create-vite@latest my-react-learning-app --template react

@@ -1,24 +1,21 @@
 import { useState } from 'react'
 import './App.css'
-import TopBar from './components/TopBar'
+import Card from './components/Card'
+
 
 function App() {
   const [count, setCount] = useState(0)
-
   return (
     <>
-      <TopBar />
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 2)}>
+     <h1>Awecome Cards</h1>
+      <div className='card_holder'>
+        <Card />
+      </div>
+      <div className="counter">
+        <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p>
-        Hello, <code>React</code>!
-      </p>
     </>
   )
 }
