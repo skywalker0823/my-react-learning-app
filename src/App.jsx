@@ -1,6 +1,5 @@
 import './App.css'
 import Cubes from './components/Cube'
-import RefreshButton from './components/RefreshBtn'
 import { useState } from 'react'
 
 

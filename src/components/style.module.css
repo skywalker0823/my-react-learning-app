@@ -16,3 +16,11 @@
 .cubeFont{
     font-size: 3px;
 }
+
+.cube_holder{
+    display: flex;
+}
+
+.button{
+    width: 100%;
+}

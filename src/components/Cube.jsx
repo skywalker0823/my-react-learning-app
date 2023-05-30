@@ -30,6 +30,7 @@ const getContrast = (hexColor) => {
 
 const Cube = () => {
 
+  // eslint-disable-next-line no-unused-vars
   const [color, setColor] = useState(colorGenerator());
 
   return <div className={styles.cube} style={{ backgroundColor:color }} alt="init cube">
@@ -38,13 +39,30 @@ const Cube = () => {
 };
 
 
+
 const Cubes = () => {
+  const regenerate = () => {
+    const cubes = document.querySelectorAll(`.${styles.cube}`);
+    cubes.forEach((cube) => {
+      cube.style.backgroundColor = colorGenerator();
+      cube.style.color = getContrast(cube.style.backgroundColor);
+    });
+  };
   const cubeComponents = Array(cubeCount).fill(null).map((_, index) => (
     <Cube key={index} />
   ));
 
   
-  return <>{cubeComponents}</>;
+  return (
+    <>
+      <div className={styles.cube_holder}>
+        {cubeComponents}
+      </div>
+      <button className={styles.button} onClick={regenerate}>
+        Regenerate
+      </button>
+    </>
+  );
 }
 
 export default Cubes;
