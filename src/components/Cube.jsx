@@ -44,8 +44,10 @@ const Cubes = () => {
   const regenerate = () => {
     const cubes = document.querySelectorAll(`.${styles.cube}`);
     cubes.forEach((cube) => {
-      cube.style.backgroundColor = colorGenerator();
+      const hex_color = colorGenerator();
+      cube.style.backgroundColor = hex_color;
       cube.style.color = getContrast(cube.style.backgroundColor);
+      cube.innerHTML = hex_color;
     });
   };
   const cubeComponents = Array(cubeCount).fill(null).map((_, index) => (
