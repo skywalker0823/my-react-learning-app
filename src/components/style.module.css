@@ -1,20 +1,18 @@
 
-.card{
-    width: 220px;
-    height: 321px;
-    background-color: #535bf2;
-    margin: 2px;
-}
-
-.card:hover{
-    background-color: #646cff;
-    position: relative;
-    top: -5px;
-    box-shadow: 0 0 10px #646cff;
+.cube{
+    cursor: pointer;
+    user-select: none;
+    height: 75px;
+    width: 75px;
     transition: all;
-    transition-duration: 0.75s;
+    transition-duration: 0.25s;
 }
 
-.nice_button{
-    font-size: 20px;
+.cube:hover{
+    height: 100px;
+    width: 100px;
+}
+
+.cubeFont{
+    font-size: 3px;
 }

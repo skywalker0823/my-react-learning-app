@@ -1,19 +1,21 @@
 import './App.css'
-import Card from './components/Card'
-import Counter from './components/counter'
+import Cube from './components/Cube'
+import { useState } from 'react'
+
 
 
 function App() {
   return (
     <>
-     <h1>Awesome Cards</h1>
-      <div className='card_holder'>
-        <Card />
+      <div className='cube_holder'>
+        <h1 className='title'>Colorz</h1>
+        <Cube />
+        <Cube />
+        <Cube />
+        <Cube />
+        <Cube />
+        <Cube />
       </div>
-      <div>DB updater</div>
-        <Counter />
-        <Counter />
-
     </>
   )
 }
