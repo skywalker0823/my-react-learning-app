@@ -1,5 +1,6 @@
 import './App.css'
-import Cube from './components/Cube'
+import Cubes from './components/Cube'
+import RefreshButton from './components/RefreshBtn'
 import { useState } from 'react'
 
 
@@ -9,12 +10,7 @@ function App() {
     <>
       <div className='cube_holder'>
         <h1 className='title'>Colorz</h1>
-        <Cube />
-        <Cube />
-        <Cube />
-        <Cube />
-        <Cube />
-        <Cube />
+        <Cubes />
       </div>
     </>
   )
