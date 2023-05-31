@@ -1,6 +1,5 @@
 import './App.css'
-import Cubes from './components/Cube'
-import { useState } from 'react'
+import Cubes from './components/Cubes'
 import PackingList from './components/TestArea'
 
 
