@@ -1,17 +1,7 @@
 import { useState } from "react";
 import styles from "./style.module.css";
-
+import colorGenerator from "../services/colorGenerator";
 const cubeCount = 6
-
-// Random hex color code generator
-const colorGenerator = () => {
-  const letters = '0123456789ABCDEF' ;
-  let color = '#';
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
 
 //Input hex color code, output contrast color
 const getContrast = (hexColor) => {
@@ -27,6 +17,7 @@ const getContrast = (hexColor) => {
 
   return contrastColor;
 }
+
 
 const Cube = ({ color }) => {
   const contrastColor = getContrast(color);
@@ -65,12 +56,12 @@ const Cubes = () => {
 
   return (
     <>
+    {/* <input></input> */}
       <div className="cubes">{cubeComponents}</div>
       <button className="regenBtn" onClick={regenerate}>Regenerate</button>
     </>
   );
 };
-
 
 
 export default Cubes;

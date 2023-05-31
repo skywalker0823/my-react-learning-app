@@ -12,3 +12,4 @@ https://my-react-learning-app.vercel.app/
 
 * Plan to use:  Vite + React + Typescript + TailwindCSS + ESLint + Prettier + Jest + React Testing Library
 
+* 根據滑鼠位置調整對比度
