@@ -3,6 +3,7 @@ import styles from "./style.module.css";
 
 const cubeCount = 6
 
+// Random hex color code generator
 const colorGenerator = () => {
   const letters = '0123456789ABCDEF' ;
   let color = '#';
@@ -12,6 +13,7 @@ const colorGenerator = () => {
   return color;
 }
 
+//Input hex color code, output contrast color
 const getContrast = (hexColor) => {
   hexColor = hexColor.replace("#", "");
 
@@ -26,45 +28,49 @@ const getContrast = (hexColor) => {
   return contrastColor;
 }
 
+const Cube = ({ color }) => {
+  const contrastColor = getContrast(color);
 
-
-const Cube = () => {
-
-  // eslint-disable-next-line no-unused-vars
-  const [color, setColor] = useState(colorGenerator());
-
-  return <div className={styles.cube} style={{ backgroundColor:color }} alt="init cube">
-    <p style={{ color:getContrast(color) }} className={styles.cubeFont}>{color}</p>
-  </div>
+  return (
+    <div
+      className={styles.cube}
+      style={{ backgroundColor: color }}
+      alt="init cube"
+    >
+      <p style={{ color: contrastColor }} className={styles.cubeFont}>
+        {color}
+      </p>
+    </div>
+  );
 };
 
 
-
 const Cubes = () => {
+  const [colors, setColors] = useState(
+    Array(cubeCount)
+      .fill(null)
+      .map(() => colorGenerator())
+  );
+
   const regenerate = () => {
-    const cubes = document.querySelectorAll(`.${styles.cube}`);
-    cubes.forEach((cube) => {
-      const hex_color = colorGenerator();
-      cube.style.backgroundColor = hex_color;
-      cube.style.color = getContrast(cube.style.backgroundColor);
-      cube.innerHTML = hex_color;
-    });
+    const newColors = Array(cubeCount)
+      .fill(null)
+      .map(() => colorGenerator());
+    setColors(newColors);
   };
-  const cubeComponents = Array(cubeCount).fill(null).map((_, index) => (
-    <Cube key={index} />
+
+  const cubeComponents = colors.map((color, index) => (
+    <Cube key={index} color={color} />
   ));
 
-  
   return (
     <>
-      <div className={styles.cube_holder}>
-        {cubeComponents}
-      </div>
-      <button className={styles.button} onClick={regenerate}>
-        Regenerate
-      </button>
+      <div className="cubes">{cubeComponents}</div>
+      <button className="regenBtn" onClick={regenerate}>Regenerate</button>
     </>
   );
-}
+};
+
+
 
 export default Cubes;

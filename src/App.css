@@ -7,13 +7,16 @@
 
 .cube_holder{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-.title{
-  position: absolute;
-  cursor:default;
-  user-select: none;
+
+.cubes{
+  display: flex;
+  justify-content: center;
 }
+
+/* .regenBtn{
+
+} */
