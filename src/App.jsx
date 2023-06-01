@@ -1,15 +1,17 @@
 import './App.css'
 import Cubes from './components/Cubes'
-import FixedColorSet from './components/fixedColorSet'
+import FixedColorSet from './components/FixedColorSet'
+// import TestArea from './components/TestArea'
 
 
 function App() {
   return (
     <>
-    <h1 className='title'>ColoЯization</h1>
-      <div className='cube_holder'>
-        <Cubes />
-          </div>
+      {/* <TestArea /> */}
+      <h1 className='title'>ColoЯization</h1>
+        <div className='cube_holder'>
+          <Cubes />
+        </div>
         <FixedColorSet />
     </>
   )

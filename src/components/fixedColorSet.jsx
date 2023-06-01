@@ -3,6 +3,8 @@ import { specialColorSets } from "../../data/colorSets";
 import Cube from "./Cube";
 
 
+
+// map and push
 const AsetColors = specialColorSets.map(aSet =>{
   console.log(aSet.aSetColors)
   let list=[]
